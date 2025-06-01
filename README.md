@@ -57,7 +57,7 @@ The system considers the following parameters for crop recommendation:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/cropmaster.git
+git clone https://github.com/Vishwanath456/CropMaster.git
 cd cropmaster
 ```
 
