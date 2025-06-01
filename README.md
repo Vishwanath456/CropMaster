@@ -106,9 +106,3 @@ Humidity: 63.69
 pH: 5.74
 Rainfall: 87.75
 ```
-
-## 🙏 Acknowledgments
-
-- Dataset provided by Kaggle
-- Machine Learning community for continuous support
-- All contributors who have helped in improving the project 
