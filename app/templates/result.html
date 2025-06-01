@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(to right, rgba(7, 231, 194, 0.3), rgba(72, 249, 2, 0.3));
+        }
+
+        #h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 5rem;
+            color: rgb(242, 31, 8);
+        }
+
+        .prediction {
+            text-align: center;
+            font-size: 3rem;
+            color: rgb(6, 9, 178);
+            margin-top: 50px;
+        }
+
+        #rice {
+            color: #2d1f1f;
+            font-size: 20px;
+        }
+
+        .prediction-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 50rem;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="h1">Prediction Result</h1>
+    <div class="prediction">
+        <p>You can Grow {{ prediction }} in the Soil</p>
+        {% if prediction == 'rice' %}
+        <img src="{{ url_for('static', filename='rice.jpg') }}" class="prediction-image" alt="Rice">
+        <p id="rice">Rice cultivation thrives best in soils with specific characteristics. The ideal soil types for rice are clayey or loamy soils due to their excellent water retention capabilities. Such soils ensure that the rice fields can remain flooded, which is a critical requirement during much of the rice growing cycle. Additionally, the soil pH should be slightly acidic to neutral, typically between 5.5 and 6.5. Nutrient-rich soils with high organic matter content, as well as adequate levels of nitrogen, phosphorus, and potassium, are essential for the healthy growth of rice plants.</p>
+            <h6>Click Here for More Information</h6>
+            <a href="https://en.wikipedia.org/wiki/Rice">Click Here</a>
+        {% elif prediction == 'maize' %}
+        <img src="{{ url_for('static', filename='maize.jpg') }}" class="prediction-image" alt="Maize">
+        <p id="Maize">Maize, also known as corn, is a versatile and widely cultivated cereal grain originally domesticated in southern Mexico about 10,000 years ago. It is a staple food in many parts of the world and is also used as fodder for livestock, raw material in industry, and as a biofuel. Maize thrives in a variety of climates and soil types, making it a crucial crop in global agriculture. Rich in carbohydrates, it is an essential source of energy for both humans and animals, and its by-products are utilized in numerous food and non-food applications.</p>
+            <h6>Click Here for More Information</h6>
+            <a href="https://en.wikipedia.org/wiki/Maize">Click Here</a>
+        {% elif prediction == 'chickpea' %}
+        <img src="{{ url_for('static', filename='chickpea.jpg') }}" class="prediction-image" alt="Chickpea">
+        <p id="Chickpea">Chickpea, also known as garbanzo bean, is a nutrient-dense legume that has been cultivated for thousands of years, originating from the Middle East. It is a staple in many diets worldwide, especially in Mediterranean and Indian cuisines, known for its versatility in dishes like hummus, falafel, and curries. Rich in protein, fiber, vitamins, and minerals, chickpeas contribute to a balanced diet and offer numerous health benefits, including improved digestion and heart health. As a nitrogen-fixing crop, chickpeas also enhance soil fertility, making them valuable in sustainable agricultural practices.</p>
+            <h6>Click Here for More Information</h6>
+            <a href="https://en.wikipedia.org/wiki/Chickpea">Click Here</a>
+        {% elif prediction == 'kidneybeans' %}
+        <img src="{{ url_for('static', filename='Kidney-beans.jpg') }}" class="prediction-image" alt="Kidney Beans">
+        <p id="Kidney Beans">Kidney beans, named for their distinctive shape and color, are a popular legume widely used in cuisines around the world, especially in Latin American and Indian dishes. They are highly nutritious, offering a good source of protein, fiber, vitamins, and minerals, such as iron and folate. Kidney beans are known for their ability to help regulate blood sugar levels due to their low glycemic index and high fiber content. Additionally, they support heart health and aid in weight management. However, it's important to cook them thoroughly, as raw kidney beans contain toxins that can cause digestive issues.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Kidney_bean">Click Here</a>
+        {% elif prediction == 'pigeonpeas' %}
+        <img src="{{ url_for('static', filename='pigeonpeas.jpg') }}" class="prediction-image" alt="Pigeon Peas">
+        <p id="Pigeon Peas">Pigeon peas, also known as red gram or tur, are a legume widely grown in tropical and subtropical regions, particularly in South Asia, Africa, and Latin America. They are a crucial source of protein and essential nutrients, such as vitamins B and C, and minerals like potassium and magnesium. Pigeon peas are highly valued for their versatility in culinary applications, used in soups, stews, curries, and as a staple in many vegetarian diets. Besides their nutritional benefits, pigeon peas improve soil health through nitrogen fixation, enhancing soil fertility and supporting sustainable agricultural practices.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Pigeon_pea">Click Here</a>
+        {% elif prediction == 'mothbeans' %}
+        <img src="{{ url_for('static', filename='mothbean.jpg') }}" class="prediction-image" alt="Moth Beans">
+        <p id="Moth Beans">Moth beans, also known as matki or dew beans, are a drought-resistant legume native to India and commonly cultivated in arid and semi-arid regions. They are highly nutritious, providing a good source of protein, fiber, vitamins, and minerals such as calcium and iron. Moth beans are valued for their versatility in the kitchen, used in a variety of dishes like sprouts, salads, curries, and snacks. Additionally, they play a significant role in sustainable agriculture due to their ability to improve soil fertility through nitrogen fixation, making them an essential crop in regions with challenging growing conditions.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Vigna_aconitifolia">Click Here</a>
+        {% elif prediction == 'mungbean' %}
+        <img src="{{ url_for('static', filename='mungbean.jpg') }}" class="prediction-image" alt="Mung Bean">
+        <p id="Mung Bean">Mung beans, also known as green gram, are small, green legumes widely cultivated in Asia and popular for their nutritional benefits and versatility in cooking. They are rich in protein, fiber, vitamins, and minerals, including folate, magnesium, and potassium. Mung beans are commonly used in a variety of dishes, from savory soups and stews to sweet desserts, and are also sprouted for use in salads and stir-fries. Their high antioxidant content supports overall health, aiding in digestion, heart health, and weight management. Additionally, mung beans contribute to sustainable agriculture by enhancing soil fertility through nitrogen fixation.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Mung_bean">Click Here</a>
+        {% elif prediction == 'blackgram' %}
+        <img src="{{ url_for('static', filename='blackgram.jpg') }}" class="prediction-image" alt="Black Gram">
+        <p id="Black Gram">Black gram, also known as urad dal or black lentil, is a highly nutritious legume extensively cultivated in South Asia. It is rich in protein, fiber, and essential nutrients such as iron, calcium, and potassium. Black gram is a staple in Indian cuisine, where it is used to prepare a variety of dishes, including dals, soups, and the popular fermented foods idli and dosa. Its dense nutrient profile supports muscle growth, bone health, and digestion. Additionally, black gram enhances soil fertility through nitrogen fixation, making it an important crop for sustainable agricultural practices.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Vigna_mungo">Click Here</a>
+        {% elif prediction == 'lentil' %}
+        <img src="{{ url_for('static', filename='lentil.jpg') }}" class="prediction-image" alt="Lentil">
+        <p id="Lentil">Lentils are small, lens-shaped legumes that come in a variety of colors, including green, brown, red, and black. They are a staple food in many cultures around the world, known for their high nutritional value. Lentils are an excellent source of protein, fiber, iron, and essential vitamins like folate and B vitamins. They cook quickly compared to other legumes and are versatile in the kitchen, commonly used in soups, stews, salads, and curries. Beyond their culinary uses, lentils contribute to soil health through nitrogen fixation, making them beneficial for sustainable farming practices.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Lentil">Click Here</a>
+        {% elif prediction == 'pomegranate' %}
+        <img src="{{ url_for('static', filename='pomegranite.jpg') }}" class="prediction-image" alt="Pomegranate">
+        <p id="Pomegranate">Pomegranate is a vibrant fruit known for its juicy, ruby-red seeds called arils, which are packed with flavor and nutrients. Native to the Mediterranean region and parts of Asia, pomegranates are rich in antioxidants, vitamins (particularly vitamin C), and dietary fiber. They are renowned for their potential health benefits, including anti-inflammatory properties, improved heart health, and enhanced memory function. Pomegranates can be enjoyed fresh, as juice, or incorporated into various dishes, from salads to desserts. Their unique taste and nutritional profile make them a popular choice for a healthy diet.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Pomegranate">Click Here</a>
+        {% elif prediction == 'banana' %}
+        <img src="{{ url_for('static', filename='banana.jpg') }}" class="prediction-image" alt="Banana">
+        <p id="Banana">Bananas are a popular, tropical fruit known for their sweet flavor and convenient, portable nature. They are rich in essential nutrients such as potassium, vitamin C, vitamin B6, and dietary fiber. Bananas are particularly valued for their role in supporting heart health, regulating blood pressure, and aiding digestion. They can be enjoyed on their own or used in a variety of dishes, from smoothies and baked goods to salads and desserts. Their natural sugars provide a quick energy boost, making them a favored snack for active individuals.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Banana">Click Here</a>
+        {% elif prediction == 'mango' %}
+        <img src="{{ url_for('static', filename='mango.jpg') }}" class="prediction-image" alt="Mango">
+        <p id="Mango">Mangoes thrive in warm, tropical climates with well-drained, sandy-loam soils and require plenty of sunlight to grow. These trees prefer temperatures between 77-95°F (25-35°C) and need protection from frost. Regular watering and balanced fertilization are crucial for healthy growth, while pruning helps maintain shape and remove dead wood. Mangoes mature over several months, and harvesting is done when the fruit changes color and begins to soften. With proper care, mango trees produce delicious, juicy fruit that is enjoyed worldwide.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Mango">Click Here</a>
+        {% elif prediction == 'grapes' %}
+        <img src="{{ url_for('static', filename='grape.jpg') }}" class="prediction-image" alt="Grapes">
+        <p id="Grapes">rapes thrive in well-drained, sandy-loam soils with a pH between 5.5 and 6.5 and prefer a sunny climate with moderate temperatures, ideally between 60-85°F (15-29°C). They require regular watering, especially during the growing season, and benefit from trellising or support structures to encourage healthy vine growth and improve air circulation. Pruning is essential to control vine growth, enhance fruit quality, and remove any diseased or dead wood. Grapes are typically harvested in late summer to early autumn when they reach full color and sweetness. Proper vineyard management ensures high-quality grape production for fresh consumption and winemaking.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Grape">Click Here</a>
+        {% elif prediction == 'watermelon' %}
+        <img src="{{ url_for('static', filename='watermelon.jpg') }}" class="prediction-image" alt="Watermelon">
+        <p id="Watermelon">Watermelons thrive in warm climates with plenty of sunlight and grow best in well-drained, sandy-loam soils with a pH of 6.0 to 7.5. They require a long, warm growing season with temperatures between 70-90°F (21-32°C). Plant watermelon seeds directly in the soil after the last frost, spacing them about 3-6 feet apart in rows 6-12 feet apart to accommodate their sprawling vines. Regular watering is crucial, especially during flowering and fruit development, but avoid waterlogging. Fertilize with a balanced fertilizer and monitor for pests like aphids and diseases such as powdery mildew. Watermelons are typically ready to harvest when the tendrils near the fruit turn brown, and the bottom of the melon changes to a yellowish color.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Watermelon">Click Here</a>
+        {% elif prediction == 'muskmelon' %}
+        <img src="{{ url_for('static', filename='muskmelon.jpg') }}" class="prediction-image" alt="Muskmelon">
+        <p id="Muskmelon">Muskmelons, also known as cantaloupes, thrive in warm, sunny climates with well-drained, sandy-loam soils and a pH of 6.0 to 7.5. They require a long growing season with temperatures between 70-85°F (21-29°C). Plant seeds directly in the soil after the danger of frost has passed, spacing them 2-3 feet apart in rows 5-6 feet apart to allow for their spreading vines. Regular watering is essential, particularly during the fruiting period, but avoid excessive moisture to prevent rot. Fertilize with a balanced fertilizer and watch for pests such as aphids and diseases like powdery mildew. Muskmelons are ready to harvest when the rind changes to a yellowish color, the netting becomes more pronounced, and they emit a sweet fragrance.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Galia_melon">Click Here</a>
+        {% elif prediction == 'apple' %}
+        <img src="{{ url_for('static', filename='apple-plant.jpg') }}" class="prediction-image" alt="Apple">
+        <p id="Apple">Apples thrive in temperate climates with well-drained, loamy soils and a pH between 6.0 and 7.0. They require a chilling period during winter for proper dormancy and subsequent fruit development. Plant apple trees in a sunny location, spacing them about 15-20 feet apart to accommodate their mature size. Regular watering, especially during dry spells, is crucial, along with balanced fertilization to ensure healthy growth. Pruning is essential to maintain tree shape, improve air circulation, and remove dead or diseased branches. Apple trees are susceptible to pests like apple maggots and diseases such as apple scab, so monitoring and management are necessary. Harvest apples when they reach full color and flavor, typically in late summer to early autumn, depending on the variety.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Apple">Click Here</a>
+        {% elif prediction == 'orange' %}
+        <img src="{{ url_for('static', filename='orange-plant.JPG') }}" class="prediction-image" alt="Orange">
+        <p id="Orange">Oranges thrive in warm, subtropical to tropical climates with well-drained, sandy-loam soils and a pH between 5.5 and 6.5. They require plenty of sunlight and temperatures between 55-100°F (13-38°C) for optimal growth. Plant orange trees in a sunny location, spacing them about 15-20 feet apart to allow for mature growth. Regular watering is essential, especially during dry periods, but avoid waterlogging. Fertilize with a balanced fertilizer rich in nitrogen, phosphorus, and potassium. Pruning helps maintain tree shape and remove any dead or diseased wood. Oranges are typically harvested when they reach full color and sweetness, usually in late autumn to winter, depending on the variety. Proper care ensures healthy trees and high-quality fruit production. </p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Orange">Click Here</a>
+        {% elif prediction == 'papaya' %}
+        <img src="{{ url_for('static', filename='papaya-plant.jpg') }}" class="prediction-image" alt="Papaya">
+        <p id="Papaya">Papayas thrive in warm, tropical climates with well-drained, sandy-loam soils and a pH between 6.0 and 6.5. They need plenty of sunlight and temperatures between 70-90°F (21-32°C) for optimal growth. Regular watering and balanced fertilization are essential. Papayas can produce fruit within 6-12 months, and they are harvested when the fruit turns from green to yellowish-orange. Proper care ensures healthy plants and abundant fruit production.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Papaya">Click Here</a>
+        {% elif prediction == 'coconut' %}
+        <img src="{{ url_for('static', filename='coconut-tree.jpg') }}" class="prediction-image" alt="Coconut">
+        <p id="Coconut">Coconuts thrive in tropical climates with well-drained, sandy-loam soils and a pH between 5.0 and 8.0. They require plenty of sunlight, high humidity, and temperatures between 70-95°F (21-35°C). Coconut palms are typically planted in coastal areas, spaced about 20-30 feet apart to accommodate their large canopy. Regular watering is crucial, especially during dry spells, along with balanced fertilization to promote healthy growth. These palms can produce fruit year-round, with coconuts typically ready to harvest about 12 months after flowering. Proper care and maintenance ensure healthy palms and abundant coconut production.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Coconut">Click Here</a>
+
+        {% elif prediction == 'cotton' %}
+        <img src="{{ url_for('static', filename='cotton.jpg') }}" class="prediction-image" alt="Cotton">
+        <p id="Cotton">Cotton thrives in warm, sunny climates with well-drained, sandy-loam soils and a pH between 5.8 and 8.0. It requires long, frost-free periods with temperatures between 60-95°F (15-35°C). Plant cotton seeds in rows, spacing them about 3-4 feet apart. Regular watering is essential, especially during the flowering and boll development stages. Fertilize with a balanced fertilizer and manage pests like boll weevils and diseases such as boll rot. Cotton is typically harvested when the bolls open and the white fibers are visible, usually in late summer to autumn. Proper care ensures healthy plants and high-quality cotton fiber production.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Cotton">Click Here</a>
+        {% elif prediction == 'jute' %}
+        <img src="{{ url_for('static', filename='jute.jpg') }}" class="prediction-image" alt="Jute">
+        <p id="Jute">Jute grows well in warm, tropical climates with well-drained, fertile soils and a pH between 6.0 and 7.0. It requires a long, hot growing season with temperatures between 77-95°F (25-35°C) and ample rainfall. Plant jute seeds directly in the soil after the last frost, spacing them about 3-6 inches apart in rows 2-3 feet apart. Regular watering is crucial, especially during the growing period. Jute is harvested when the plants reach about 10-12 feet tall, typically around 4-6 months after planting, and the stems are retted to separate the fibers. Proper care ensures high-quality fiber production for use in textiles and other products.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Jute">Click Here</a>
+        {% elif prediction == 'coffee' %}
+        <img src="{{ url_for('static', filename='coffee.jpg') }}" class="prediction-image" alt="Coffee">
+        <p id="Coffee">Coffee thrives in tropical climates with well-drained, fertile soils and a pH between 6.0 and 6.5. It requires consistent warmth, with temperatures ideally between 60-70°F (15-24°C) and protection from frost. Coffee plants need partial shade and regular watering, particularly during dry periods. Space the plants about 5-8 feet apart to accommodate their growth. Fertilize with balanced nutrients and prune to maintain shape and health. Coffee trees typically start producing fruit in 2-4 years, with harvesting done once the cherries turn red or yellow, usually in late autumn. Proper care ensures healthy plants and high-quality coffee beans.</p>
+        <h6>Click Here for More Information</h6>
+        <a href="https://en.wikipedia.org/wiki/Coffee">Click Here</a>
+        {% else %}
+        <p>No image available for this prediction.</p>
+        {% endif %}
+    </div>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/1e909528-c4e6-4537-8352-ea7f8e13cff9/webchat/config.js" defer></script>
+</body>
+
+</html>
